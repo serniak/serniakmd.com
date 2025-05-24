@@ -32,7 +32,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="stylesheet" href="css/grid-3.0.min.css" type="text/css" media="all" onerror="this.loaderr='y';"/>
     <link rel="stylesheet" href="css/blocks-2.14.css?t=1651907903" type="text/css" media="all" onerror="this.loaderr='y';" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&subset=latin,cyrillic" rel="stylesheet">
+    
+    <!-- Help the browser connect faster -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Start downloading the fonts early -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&subset=latin,cyrillic">
+
+<!-- Load fonts without blocking the page -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&subset=latin,cyrillic" rel="stylesheet" media="print" onload="this.onload=null;this.media='all';">
+
+<!-- For people without JavaScript -->
+<noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&subset=latin,cyrillic" rel="stylesheet">
+</noscript>
+
     <link rel="stylesheet" href="css/animation-1.0.min.css" type="text/css" media="all" onerror="this.loaderr='y';" />
     <link rel="stylesheet" href="css/menusub-1.0.min.css" type="text/css" media="print" onload="this.media='all';" onerror="this.loaderr='y';" />
     <noscript>
