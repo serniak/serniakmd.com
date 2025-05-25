@@ -1,7 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
+  <head><meta charset="utf-8" />
+    <!-- Add this FIRST, before any other styles or scripts -->
+    <style>
+    /* CRITICAL: Force LCP element to display immediately */
+    [data-customstyle="yes"] {
+        display: block !important;
+        visibility: visible !important; 
+        opacity: 1 !important;
+        font-family: 'Roboto', sans-serif !important;
+    }
+    
+    /* Prevent FOUC (flash of unstyled content) */
+    .t-title, .t-text, h1, h2 {
+        display: block !important;
+        visibility: visible !important;
+    }
+    
+    /* Base text styling to prevent layout shift */
+    body {
+        font-family: 'Roboto', Arial, sans-serif;
+        line-height: 1.4;
+    }
+    </style>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
@@ -26,7 +47,7 @@ html, body {
     <meta name="keywords" content="уролог киев, урологическая клиника, урологи киева, мужской врач, камни в почках, уролог київ, урологічна клініка, урологи києва, чоловічий лікар, каміння в нирках" />
     <meta property="og:url" content="https://serniakmd.com" />
     <meta property="og:title" content="Серняк Юрій Петрович Уролог Вищої Категорії" />
-    <meta property="og:description" content="" />
+    <meta property="og:description" content="Серняк Юрій Петрович — уролог вищої категорії у Києві. Спеціалізація: камені в нирках, чоловіче здоров’я." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="images/6365-6561-4032-a437-333836663632resize504ximg_5762-3.jpg" />
     <link rel="canonical" href="https://serniakmd.com">
@@ -50,8 +71,8 @@ html, body {
     <link rel="preload" href="/css/grid-3.0.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/css/grid-3.0.min.css"></noscript>
     
-    <link rel="preload" href="/css/blocks-2.14.css?t=165..." as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/css/blocks-2.14.css?t=165..."></noscript>
+    <link rel="preload" href="/css/blocks-2.14.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/blocks-2.14.css"></noscript>
     
     <link rel="preconnect" href="https://fonts.gstatic.com">
     
@@ -109,8 +130,8 @@ html, body {
     <script src="js/events-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script>
     <script src="js/menusub-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script>
     <script src="js/slds-1.4.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script>
-    <script src="js/hammer.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script>
-    <script src="js/zoom-2.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script>
+    <script src="js/hammer.min.js" defer charset="utf-8" async onerror="this.loaderr='y';"></script>
+    <script src="js/zoom-2.0.min.js" defer charset="utf-8" async onerror="this.loaderr='y';"></script>
     <script src="js/map-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script>
     
     <script type="text/javascript">window.dataLayer = window.dataLayer || [];</script>
