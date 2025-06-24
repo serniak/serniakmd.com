@@ -825,7 +825,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="t-input-error"></div>
        </div> </div> <div class="t-input-group t-input-group_ph" data-input-lid="1495810359387"> <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1495810359387" style="">Ваш телефон</div>
         <div class="t-input-block">
-          <input type="text" id="Контакт" name="Контакт" placeholder="" class="t-input js--rule js--mask " value="" data--req="1" data--rule="phone"  style="color:#000000; border:1px solid #c9c9c9; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;" required  oninvalid="setCustomValidity('Введіть номер телефону або адресу електронної пошти')"  oninput="setCustomValidity('')">
+          <input type="tel" id="Контакт" name="Контакт" placeholder="+380" class="t-input js--rule js--mask " value="+380" data--req="1" data--rule="phone" pattern="^\+380[0-9]{9}$" style="color:#000000; border:1px solid #c9c9c9; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;" required  oninvalid="setCustomValidity('Введіть номер телефону у форматі +380XXXXXXXXX')"  oninput="setCustomValidity(''); formatUkrainianPhone(this);">
      <div class="t-input-error"></div> </div> </div><div class="t-form__errorbox-middle"> <div class="js-errorbox-all t-form__errorbox-wrapper" style="display:none;">
       <div class="t-form__errorbox-text t-text t-text_md"> <p class="t-form__errorbox-item js-rule-error js-rule-error-all"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-req"></p>
        <p class="t-form__errorbox-item js-rule-error js-rule-error-email"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-name"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-phone"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-minlength"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-string"></p> </div> </div></div> <div class="t-form__submit"> <button type="submit" class="t-submit" data-umami-event="submit-form-button-click" style="color:#ffffff;background-color:#29a9db;border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;" >Записатися на консультацію</button> </div> </div> <div class="t-form__errorbox-bottom"> <div class="js-errorbox-all t-form__errorbox-wrapper" style="display:none;"> <div class="t-form__errorbox-text t-text t-text_md"> <p class="t-form__errorbox-item js-rule-error js-rule-error-all"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-req"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-email"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-name"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-phone"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-minlength"></p> <p class="t-form__errorbox-item js-rule-error js-rule-error-string"></p> </div> </div> </div> </form>
@@ -969,6 +969,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const hours = pad(now.getHours());
     const minutes = pad(now.getMinutes());
     return `${day}.${month}.${year} ${hours}:${minutes}`;
+  }
+
+  function formatUkrainianPhone(input) {
+    let value = input.value;
+    
+    // If the value is shorter than +380 or doesn't start with +380, reset to +380
+    if (value.length < 4 || !value.startsWith('+380')) {
+      input.value = '+380';
+      input.setCustomValidity('');
+      return;
+    }
+    
+    // Extract only digits after +380
+    let prefix = '+380';
+    let digits = value.substring(4).replace(/\D/g, '');
+    
+    // Limit to 9 digits after +380
+    if (digits.length > 9) {
+      digits = digits.substring(0, 9);
+    }
+    
+    input.value = prefix + digits;
+    
+    // Validate the complete format
+    const isValid = /^\+380[0-9]{9}$/.test(input.value);
+    if (input.value.length > 4 && !isValid) {
+      input.setCustomValidity('Номер телефону має бути у форматі +380XXXXXXXXX');
+    } else {
+      input.setCustomValidity('');
+    }
   }
 
   document.getElementById('form51720405').addEventListener('submit', async function (e) {
