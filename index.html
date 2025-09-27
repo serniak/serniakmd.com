@@ -43,28 +43,29 @@ html, body {
     <meta name="format-detection" content="telephone=no" />
     <meta http-equiv="x-dns-prefetch-control" content="on">
     
-    <!-- OPTIMIZATION: Preconnect to jQuery CDN early -->
+    <!-- OPTIMIZATION: Preconnect to CDNs early -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
-    
-    <!-- OPTIMIZATION: Preload jQuery to start download immediately -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" as="script" crossorigin>
-    <link rel="preload" href="js/scripts-3.0.min.js" as="script">
-    
-    <!-- Assets -->
-    <script src="js/fallback-1.0.min.js" charset="utf-8" async></script>
-    
-    <link rel="preload" href="/css/grid-3.0.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/css/grid-3.0.min.css"></noscript>
-    
-    <link rel="preload" href="/css/blocks-2.14.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/css/blocks-2.14.css"></noscript>
-    
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    
-    <!-- Help the browser connect faster -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- OPTIMIZATION: Preload critical CSS first for fastest render -->
+    <link rel="preload" href="/css/blocks-2.14.css?v=1727480000" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/blocks-2.14.css?v=1727480000"></noscript>
+
+    <link rel="preload" href="/css/grid-3.0.min.css?v=1727480000" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/grid-3.0.min.css?v=1727480000"></noscript>
+
+    <!-- OPTIMIZATION: Preload critical images for faster LCP -->
+    <link rel="preload" href="/images/6365-6561-4032-a437-333836663632img_5762-3.jpg" as="image">
+    <link rel="preload" href="/images/6561-3362-4239-a464-633931333363serniyak-3.jpg" as="image">
+
+    <!-- OPTIMIZATION: Preload JavaScript -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" as="script" crossorigin>
+    <link rel="preload" href="js/scripts-3.0.min.js?v=1727480000" as="script">
+
+    <!-- Assets -->
+    <script src="js/fallback-1.0.min.js?v=1727480000" charset="utf-8" async></script>
 
     <!-- Start downloading the fonts early -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&subset=latin,cyrillic&display=swap">
@@ -143,8 +144,8 @@ html, body {
     </style>
     
     <!-- KEEP SCRIPTS IN SAME ORDER BUT OPTIMIZED -->
-    <script src="/js/jquery-3.7.1.min.js" ></script>
-    <script src="js/scripts-3.0.min.js" onerror="this.loaderr='y';"></script>
+    <script src="/js/jquery-3.7.1.min.js?v=1727480000" ></script>
+    <script src="js/scripts-3.0.min.js?v=1727480000" onerror="this.loaderr='y';"></script>
 <script defer src="https://serniakmd.com/script.js" data-website-id="ddeeda92-f39a-4d6b-b071-53b0c3b38b55"></script>
 
   </head>
