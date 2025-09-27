@@ -14,13 +14,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
     <!--metatextblock-->
     <title>Серняк Юрій Петрович Уролог Вищої Категорії</title>
-    
-    <!-- Critical Resource Preloads -->
-    <link rel="preload" href="/js/jquery-3.7.1.min.js" as="script">
-    <link rel="preload" href="/css/blocks-2.14.css" as="style">
-    <link rel="preload" href="/js/scripts-3.0.min.js" as="script">
-    <link rel="preload" href="images/6365-6561-4032-a437-333836663632resize20ximg_5762-3.jpg" as="image">
-    <link rel="preload" href="images/6561-3362-4239-a464-633931333363resize20xserniyak-3.jpg" as="image">  
+    <link rel="preload" href="/js/jquery-3.7.1.min.js" as="script">  
     <style>
 * {
     margin: 0;
@@ -34,9 +28,6 @@ html, body {
     width: 100%;
     height: 100%;
 }
-
-/* Critical Grid CSS - Inlined for faster loading */
-.t-clear,.t-container:after,.t-container_100:after,.t-container_10:after,.t-container_8:after{clear:both}*,:after,:before{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}a,b,blockquote,center,code,div,h1,h2,h3,h4,h5,h6,i,img,p,pre,span,table,td,th,tr,u,video{margin:0;padding:0;border:0}.t-row{margin:0}.t-container,.t-container_10,.t-container_8{margin-left:auto;margin-right:auto;padding:0;width:100%}.t-container{max-width:1200px}.t-container.flexx,.t-container_flex{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex}.t-container_100{width:100%;padding:0}.t-container_10{max-width:1000px}.t-container_8{max-width:800px}.t-container:after,.t-container:before,.t-container_100:after,.t-container_100:before,.t-container_10:after,.t-container_10:before,.t-container_8:after,.t-container_8:before{display:table;content:" "}.t-col{display:inline;float:left;margin-left:20px;margin-right:20px;width:100%}.t-col_7{max-width:660px}.t-col_12{max-width:1160px}@media screen and (max-width:960px){.t-col,.t-container.flexx,.t-container_flex{display:block}.t-container{max-width:640px}.t-col,.t-col_7,.t-col_12{width:100%;max-width:100%}.t-col{float:none;padding-left:20px;padding-right:20px;margin:0;box-sizing:border-box}}
     </style>
 
     <meta name="keywords" content="уролог киев, урологическая клиника, урологи киева, мужской врач, камни в почках, уролог київ, урологічна клініка, урологи києва, чоловічий лікар, каміння в нирках" />
@@ -56,77 +47,15 @@ html, body {
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     
+    <!-- OPTIMIZATION: Preload jQuery to start download immediately -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" as="script" crossorigin>
+    <link rel="preload" href="js/scripts-3.0.min.js" as="script">
     
     <!-- Assets -->
     <script src="js/fallback-1.0.min.js" charset="utf-8" async></script>
     
-    <!-- WebP Detection and Background Image Optimization -->
-    <script>
-    (function() {
-        function checkWebP(callback) {
-            var webP = new Image();
-            webP.onload = webP.onerror = function () {
-                callback(webP.height == 2);
-            };
-            webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
-        }
-
-        checkWebP(function(supported) {
-            if (supported) {
-                // Replace background images with WebP versions
-                var imageMap = {
-                    'images/6365-6561-4032-a437-333836663632img_5762-3.jpg': 'images/6365-6561-4032-a437-333836663632img_5762-3.webp',
-                    'images/6561-3362-4239-a464-633931333363serniyak-3.jpg': 'images/6561-3362-4239-a464-633931333363serniyak-3.webp',
-                    'images/3864-6533-4337-b661-316466663461img_5564-2.jpg': 'images/3864-6533-4337-b661-316466663461img_5564-2.webp',
-                    'images/3762-6336-4162-a231-396165613530img_4418.jpg': 'images/3762-6336-4162-a231-396165613530img_4418.webp'
-                };
-
-                function replaceBackgroundImages() {
-                    var elements = document.querySelectorAll('[style*="background-image"], [data-content-cover-bg], [data-original]');
-                    elements.forEach(function(el) {
-                        var style = el.style.backgroundImage;
-                        var dataBg = el.getAttribute('data-content-cover-bg');
-                        var dataOriginal = el.getAttribute('data-original');
-                        
-                        if (style) {
-                            for (var original in imageMap) {
-                                if (style.indexOf(original) !== -1) {
-                                    el.style.backgroundImage = style.replace(original, imageMap[original]);
-                                }
-                            }
-                        }
-                        
-                        if (dataBg && imageMap[dataBg]) {
-                            el.setAttribute('data-content-cover-bg', imageMap[dataBg]);
-                        }
-                        
-                        if (dataOriginal && imageMap[dataOriginal]) {
-                            el.setAttribute('data-original', imageMap[dataOriginal]);
-                        }
-                    });
-                }
-
-                if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', replaceBackgroundImages);
-                } else {
-                    replaceBackgroundImages();
-                }
-            }
-        });
-    })();
-    
-    // Register Service Worker for caching
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-            navigator.serviceWorker.register('/sw.js').then(function(registration) {
-                console.log('SW registered with scope: ', registration.scope);
-            }, function(err) {
-                console.log('SW registration failed: ', err);
-            });
-        });
-    }
-    </script>
-    
+    <link rel="preload" href="/css/grid-3.0.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/grid-3.0.min.css"></noscript>
     
     <link rel="preload" href="/css/blocks-2.14.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/css/blocks-2.14.css"></noscript>
@@ -198,8 +127,8 @@ html, body {
     </style>
     
     <!-- KEEP SCRIPTS IN SAME ORDER BUT OPTIMIZED -->
-    <script src="/js/jquery-3.7.1.min.js"></script>
-    <script src="js/scripts-3.0.min.js" defer onerror="this.loaderr='y';"></script>
+    <script src="/js/jquery-3.7.1.min.js" ></script>
+    <script src="js/scripts-3.0.min.js" onerror="this.loaderr='y';"></script>
     <script>
       !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init be ys Ss me gs ws capture Ne calculateEventProperties xs register register_once register_for_session unregister unregister_for_session Rs getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Is ks createPersonProfile Ps bs opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing $s debug Es getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
       posthog.init('phc_BvsVl3F2CUbmvTBxSREiz5obcsXZ54NRVm4SmSnHuKQ', {
