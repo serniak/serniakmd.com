@@ -6,8 +6,8 @@ function loadGTM() {
   })(window,document,'script','dataLayer','GTM-MHCRN864');
 }
 
-// Load GTM after a longer delay or user interaction to reduce initial JS load
-const delay = 5000; // Increased to 5 seconds
+// Load GTM after a delay or user interaction
+const delay = 3000; // 3 seconds
 let gtmLoaded = false;
 
 function triggerGTM() {
@@ -17,15 +17,9 @@ function triggerGTM() {
   }
 }
 
-// Only load on user interaction for better performance
-// Removed automatic timeout loading to reduce unused JS
-['scroll', 'click', 'touchstart'].forEach(event => {
+setTimeout(triggerGTM, delay);
+
+// Also trigger on user interaction
+['mousemove', 'scroll', 'keydown', 'click', 'touchstart'].forEach(event => {
   document.addEventListener(event, triggerGTM, { once: true });
 });
-
-// Fallback: load after 10 seconds if no interaction
-setTimeout(() => {
-  if (!gtmLoaded) {
-    triggerGTM();
-  }
-}, 10000);
