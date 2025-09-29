@@ -58,94 +58,65 @@ html, body {
     <link rel="preload" href="/css/blocks-2.14.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/css/blocks-2.14.css"></noscript>
     
-     <!-- Optimized font loading for LCP improvement -->
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    
+    <!-- Help the browser connect faster -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-     <!-- Preload critical font with high priority -->
-     <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2" crossorigin>
+     <!-- Start downloading the fonts early -->
+     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&subset=latin,cyrillic&display=swap">
 
-     <!-- Load fonts asynchronously with better fallback -->
-     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&subset=latin,cyrillic&display=swap" rel="stylesheet" media="print" onload="this.onload=null;this.media='all'; this.onload=function(){this.removeAttribute('media');}">
+     <!-- Load fonts without blocking the page -->
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&subset=latin,cyrillic&display=swap" rel="stylesheet" media="print" onload="this.onload=null;this.media='all';">
 
-     <!-- Fallback for no-JS -->
+     <!-- For people without JavaScript -->
      <noscript>
        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&subset=latin,cyrillic&display=swap" rel="stylesheet">
      </noscript>
 
-     <!-- Enhanced font fallback for immediate text visibility -->
+     <!-- Font fallback optimization - improved for LCP -->
      <style>
      @font-face {
        font-family: 'Roboto Fallback';
-       src: local('Arial'), local('Helvetica'), local('system-ui'), local('-apple-system');
+       src: local('Arial'), local('Helvetica'), local('system-ui');
        size-adjust: 100.06%;
        ascent-override: 92%;
        descent-override: 24%;
        line-gap-override: 0%;
      }
 
-      /* Critical CSS for LCP element - hero title with immediate visibility */
-      .t189__title.t-title {
-        color: #0f0e0e;
-        font-size: 36px;
-        font-family: 'Roboto Fallback', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-        font-weight: 700;
-        line-height: 1.1;
-        font-display: swap;
-        /* Ensure text is visible immediately */
-        visibility: visible;
-        opacity: 1;
-      }
+     /* Critical CSS for LCP element - hero title */
+     .t189__title.t-title {
+       color: #0f0e0e;
+       font-size: 36px;
+       font-family: 'Roboto', 'Roboto Fallback', system-ui, -apple-system, sans-serif;
+       font-weight: 700;
+       line-height: 1.1;
+       font-display: swap;
+     }
 
-      .t189__title.t-title div[data-customstyle="yes"] {
-        font-size: 34px;
-        line-height: 36px;
-        /* Reserve space to prevent layout shift */
-        min-height: 72px;
-        display: block;
-      }
+     .t189__title.t-title div[data-customstyle="yes"] {
+       font-size: 34px;
+       line-height: 36px;
+     }
 
-      /* Web font loading - update font-family when Roboto loads */
-      .wf-roboto-n7-active .t189__title.t-title,
-      .wf-roboto-n4-active .t189__title.t-title {
-        font-family: 'Roboto', 'Roboto Fallback', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-      }
+     /* Critical layout for hero section */
+     .t-cover {
+       height: 100vh;
+       position: relative;
+     }
 
-      /* Critical layout for hero section - optimized for LCP */
-      .t-cover {
-        height: 100vh;
-        position: relative;
-        /* Ensure immediate rendering */
-        contain: layout style paint;
-      }
+     .t-container {
+       max-width: 1200px;
+       margin: 0 auto;
+       padding: 0 20px;
+     }
 
-      .t-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-        /* Prevent layout shifts */
-        contain: layout;
-      }
-
-      .t-col.t-col_7 {
-        width: 58.3333%;
-        float: left;
-        /* Optimize for performance */
-        contain: layout style;
-      }
-
-      .t-cover__wrapper {
-        height: 100vh;
-        position: relative;
-        z-index: 1;
-        /* Ensure proper stacking context */
-        contain: layout;
-      }
-
-      .t189 {
-        /* Reserve space for hero content */
-        min-height: 200px;
-      }
+     .t-col.t-col_7 {
+       width: 58.3333%;
+       float: left;
+     }
 
      .t-cover__wrapper {
        position: relative;
@@ -342,8 +313,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   setTimeout(function(){
   t868_initPopup('75125407');
   }, 500);
-  });</script></div><div id="rec51689810" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-record-type="213" ><!-- cover --><div class="t-cover" id="recorddiv51689810" bgimgfield="img" style="height:100vh; background-image:url('images/6365-6561-4032-a437-333836663632resize20ximg_5762-3.webp');background-image:image-set(url('images/6365-6561-4032-a437-333836663632resize20ximg_5762-3.avif') type('image/avif'),url('images/6365-6561-4032-a437-333836663632resize20ximg_5762-3.webp') type('image/webp'),url('images/6365-6561-4032-a437-333836663632resize20ximg_5762-3.jpg') type('image/jpeg'));" loading="eager"><div class="t-cover__carrier" id="coverCarry51689810" data-content-cover-id="51689810" data-content-cover-bg="images/6365-6561-4032-a437-333836663632img_5762-3.webp" data-content-cover-height="100vh" data-content-cover-parallax="dynamic" style="height:100vh;background-attachment:scroll; "></div> <div class="t-cover__filter" style="height:100vh;background-image: -moz-linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));background-image: -o-linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));background-image: -ms-linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));background-image: linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ccffffff', endColorstr='#ccffffff');"></div><div class="t-container"> <div class="t-col t-col_7"><div class="t-cover__wrapper t-valign_middle" style="height:100vh; position: relative;z-index: 1;"> <div class="t189"> <div data-hook-content="covercontent"> <div class="t189__wrapper"> <div class="t189__title t-title" style="color:#0f0e0e; font-size:36px; font-family: 'Roboto Fallback', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-weight:700; line-height:1.1;" field="title">
-   <div style="font-size:34px; line-height:36px;" data-customstyle="yes" style="min-height: 72px;">
+  });</script></div><div id="rec51689810" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-record-type="213" ><!-- cover --><div class="t-cover" id="recorddiv51689810" bgimgfield="img" style="height:100vh; background-image:url('images/6365-6561-4032-a437-333836663632resize20ximg_5762-3.webp');background-image:image-set(url('images/6365-6561-4032-a437-333836663632resize20ximg_5762-3.avif') type('image/avif'),url('images/6365-6561-4032-a437-333836663632resize20ximg_5762-3.webp') type('image/webp'),url('images/6365-6561-4032-a437-333836663632resize20ximg_5762-3.jpg') type('image/jpeg'));" ><div class="t-cover__carrier" id="coverCarry51689810" data-content-cover-id="51689810" data-content-cover-bg="images/6365-6561-4032-a437-333836663632img_5762-3.webp" data-content-cover-height="100vh" data-content-cover-parallax="dynamic" style="height:100vh;background-attachment:scroll; "></div> <div class="t-cover__filter" style="height:100vh;background-image: -moz-linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));background-image: -o-linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));background-image: -ms-linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));background-image: linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ccffffff', endColorstr='#ccffffff');"></div><div class="t-container"> <div class="t-col t-col_7"><div class="t-cover__wrapper t-valign_middle" style="height:100vh; position: relative;z-index: 1;"> <div class="t189"> <div data-hook-content="covercontent"> <div class="t189__wrapper"> <div class="t189__title t-title" style="color:#0f0e0e; font-size:36px; font-family: 'Roboto', system-ui, sans-serif; font-weight:700; line-height:1.1;" field="title">
+  <div style="font-size:34px; line-height:36px;" data-customstyle="yes" style="min-height: 100px;">
     <br />КЛІНІКА ПРОФЕСОРА СЕРНЯКА<br />УРОЛОГІЯ СВІТОВИХ СТАНДАРТІВ
   </div>
     
