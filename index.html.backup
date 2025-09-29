@@ -64,72 +64,32 @@ html, body {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-     <!-- Start downloading the fonts early -->
-     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&subset=latin,cyrillic&display=swap">
+    <!-- Start downloading the fonts early -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&subset=latin,cyrillic&display=swap">
 
-     <!-- Load fonts without blocking the page -->
-     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&subset=latin,cyrillic&display=swap" rel="stylesheet" media="print" onload="this.onload=null;this.media='all';">
+    <!-- Load fonts without blocking the page -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&subset=latin,cyrillic&display=swap" rel="stylesheet" media="print" onload="this.onload=null;this.media='all';">
 
-     <!-- For people without JavaScript -->
-     <noscript>
-       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&subset=latin,cyrillic&display=swap" rel="stylesheet">
-     </noscript>
+    <!-- For people without JavaScript -->
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&subset=latin,cyrillic&display=swap" rel="stylesheet">
+    </noscript>
 
-     <!-- Font fallback optimization - improved for LCP -->
-     <style>
-     @font-face {
-       font-family: 'Roboto Fallback';
-       src: local('Arial'), local('Helvetica'), local('system-ui');
-       size-adjust: 100.06%;
-       ascent-override: 92%;
-       descent-override: 24%;
-       line-gap-override: 0%;
-     }
+    <!-- Font fallback optimization -->
+    <style>
+    @font-face {
+      font-family: 'Roboto Fallback';
+      src: local('Arial'), local('Helvetica'), local('system-ui');
+      size-adjust: 100.06%;
+      ascent-override: 92%;
+      descent-override: 24%;
+      line-gap-override: 0%;
+    }
 
-     /* Critical CSS for LCP element - hero title */
-     .t189__title.t-title {
-       color: #0f0e0e;
-       font-size: 36px;
-       font-family: 'Roboto', 'Roboto Fallback', system-ui, -apple-system, sans-serif;
-       font-weight: 700;
-       line-height: 1.1;
-       font-display: swap;
-     }
-
-     .t189__title.t-title div[data-customstyle="yes"] {
-       font-size: 34px;
-       line-height: 36px;
-     }
-
-     /* Critical layout for hero section */
-     .t-cover {
-       height: 100vh;
-       position: relative;
-     }
-
-     .t-container {
-       max-width: 1200px;
-       margin: 0 auto;
-       padding: 0 20px;
-     }
-
-     .t-col.t-col_7 {
-       width: 58.3333%;
-       float: left;
-     }
-
-     .t-cover__wrapper {
-       position: relative;
-       z-index: 1;
-       height: 100vh;
-       display: flex;
-       align-items: center;
-     }
-
-     body, .t-name, .t-title, .t-text, .t-descr {
-       font-family: 'Roboto', 'Roboto Fallback', system-ui, -apple-system, sans-serif;
+    body, .t-name, .t-title, .t-text, .t-descr {
+      font-family: 'Roboto', 'Roboto Fallback', system-ui, -apple-system, sans-serif;
 }
-     </style>
+    </style>
     
     <!-- Custom CSS for Google Reviews positioning -->
     <style>
@@ -144,11 +104,38 @@ html, body {
     }
     </style>
 
-     <!-- Critical CSS (grid, blocks, cover) kept in head for LCP -->
-     <link rel="preload" href="/css/cover-1.0.min.css" as="style" onload="this.rel='stylesheet'">
-     <noscript>
-       <link rel="stylesheet" href="/css/cover-1.0.min.css">
-     </noscript>
+    <link rel="stylesheet" href="/css/animation-1.0.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/css/animation-1.0.min.css"></noscript>
+    
+    <link rel="stylesheet" href="css/menusub-1.0.min.css" type="text/css" media="print" onload="this.media='all';" onerror="this.loaderr='y';" />
+    <noscript>
+      <link rel="stylesheet" href="css/menusub-1.0.min.css" type="text/css" media="all" />
+    </noscript>
+    
+    <link rel="stylesheet" href="css/popup-1.1.min.css" type="text/css" media="print" onload="this.media='all';" onerror="this.loaderr='y';" />
+    <noscript>
+      <link rel="stylesheet" href="css/popup-1.1.min.css" type="text/css" media="all" />
+    </noscript>
+    
+    <link rel="preload" href="/css/cover-1.0.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="/css/cover-1.0.min.css">
+    </noscript>
+    
+    <link rel="stylesheet" href="css/slds-1.4.min.css" type="text/css" media="print" onload="this.media='all';" onerror="this.loaderr='y';" />
+    <noscript>
+      <link rel="stylesheet" href="css/slds-1.4.min.css" type="text/css" media="all" />
+    </noscript>
+    
+    <link rel="stylesheet" href="css/zoom-2.0.min.css" type="text/css" media="print" onload="this.media='all';" onerror="this.loaderr='y';" />
+    <noscript>
+      <link rel="stylesheet" href="css/zoom-2.0.min.css" type="text/css" media="all" />
+    </noscript>
+    
+    <link rel="stylesheet" href="css/carousel-1.0.min.css" type="text/css" media="print" onload="this.media='all';" onerror="this.loaderr='y';" />
+    <noscript>
+      <link rel="stylesheet" href="css/carousel-1.0.min.css" type="text/css" media="all" />
+    </noscript>
     
     <script src="js/blocks-2.7.js?t=1651907903" defer onerror="this.loaderr='y';"></script>
     <script src="js/progressive-loader.js" charset="utf-8" async onerror="this.loaderr='y';"></script>
@@ -167,7 +154,8 @@ html, body {
     .t-submit{text-align:center;height:60px;border:0 none;font-size:16px;padding-left:60px;padding-right:60px;-webkit-appearance:none;appearance:none;font-weight:700;white-space:nowrap;background-image:none;cursor:pointer;margin:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;outline:none;background:transparent}.t-submit_sending{opacity:.5}@media screen and (max-width:640px){.t-submit{white-space:normal;padding-left:30px;padding-right:30px}}.t-input{margin:0;font-size:100%;height:60px;padding:0 20px;font-size:16px;line-height:1.33;width:100%;border:0 none;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;outline:none;-webkit-appearance:none;appearance:none;border-radius:0}.t-input::-moz-focus-inner{padding:0;border:0}.t-input_bbonly{outline:none;padding-left:0!important;padding-right:0!important;border-top:0!important;border-right:0!important;border-left:0!important;background-color:transparent!important;border-radius:0!important;border-bottom:1px solid}.t-input_pvis{padding:26px 20px 10px 20px}.tn-atom__form .t-input_pvis{padding:26px 20px 10px 20px!important}.t-input__vis-ph{font-size:16px;line-height:1;opacity:.5;position:absolute;left:20px;top:22px;height:16px;-webkit-transform:translateZ(0);transform:translateZ(0);-webkit-transition:transform 0.2s linear;transition:transform 0.2s linear;-webkit-transform-origin:left;transform-origin:left;pointer-events:none;white-space:nowrap}.t-input:focus~.t-input__vis-ph,.t-input_has-content+.t-input__vis-ph{-webkit-transform:translateY(-100%) scale(.7);transform:translateY(-100%) scale(.7)}.t-input:invalid{box-shadow:none}.t-input-group_cb div[data-customstyle=yes]{display:inline;vertical-align:middle}.t-form_bbonly .t-input__vis-ph{left:0px!important}.t-form_bbonly .js-error-control-box .t-input__vis-ph{left:10px!important}.t-input-group_ta textarea.t-input{resize:vertical}.t-select{width:100%;box-sizing:border-box;cursor:pointer;height:60px;padding:0 45px 0 20px;font-size:16px;line-height:1.33;outline:0;border:0;border-radius:0;background:transparent;-webkit-appearance:none;appearance:none;-moz-appearance:none}.t-select_bbonly{outline:none;padding-left:0!important;padding-right:0!important;border-top:0!important;border-right:0!important;border-left:0!important;background-color:transparent!important;border-radius:0!important}.t-select_bbonly option{color:#000;background-color:#fff}.t-select__wrapper{position:relative}.t-select__wrapper:after{content:' ';width:0;height:0;border-style:solid;border-width:6px 5px 0 5px;border-color:#000 transparent transparent transparent;position:absolute;right:20px;top:0;bottom:0;margin:auto;pointer-events:none}.t-select::-ms-expand{width:0;height:0;opacity:0}.t-select__wrapper_bbonly::after{right:0px!important}.t-checkbox__control{display:block;position:relative;cursor:pointer}.t-checkbox__control .t-checkbox{position:absolute;z-index:-1;opacity:0}.t-checkbox__indicator{position:relative;display:inline-block;vertical-align:middle;height:20px;width:20px;border:2px solid #000;box-sizing:border-box;margin-right:10px;-webkit-transition:all 0.2s;transition:all 0.2s;opacity:.6}.t-checkbox__indicator:after{content:'';position:absolute;display:none;left:6px;top:2px;width:3px;height:8px;border:solid #000;border-width:0 2px 2px 0;transform:rotate(45deg)}.t-checkbox__control .t-checkbox:checked~.t-checkbox__indicator{opacity:1}.t-checkbox__control .t-checkbox:checked~.t-checkbox__indicator:after{display:block}.t-checkbox__labeltext,.t-checkbox__labeltext div{display:inline}.t-checkboxes__wrapper .t-checkbox__control{margin:10px 0}.t-radio{position:absolute;z-index:-1;opacity:0}.t-radio__control{display:table;position:relative;cursor:pointer;margin:0 0 10px 0}.t-radio__control:first-child{margin:3px 0 10px 0}.t-radio__control:last-child{margin:0 0 0 0}.t-radio__indicator{position:relative;display:inline-block;vertical-align:middle;height:20px;width:20px;border-color:#000;border-style:solid;border-width:2px;box-sizing:border-box;border-radius:50%;margin-right:10px;-webkit-transition:all 0.2s;transition:all 0.2s;opacity:.6}.t-radio__indicator:after{content:'';width:10px;height:10px;background:#000;border-radius:50%;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;opacity:0;-webkit-transition:all 0.2s;transition:all 0.2s}.t-radio__control .t-radio:checked~.t-radio__indicator:after{opacity:1}.t-radio__control .t-radio:checked~.t-radio__indicator{opacity:1}.t-inputquantity{width:70px;text-align:center;margin-left:.5rem;margin-right:.5rem}.t-inputquantity__btn{font-size:26px;cursor:pointer;margin-left:.5rem;margin-right:.5rem;-webkit-user-select:none;-moz-user-select:none;-khtml-user-select:none;-ms-user-select:none;user-select:none}.t-form .uploadcare-widget-button{background:#333;line-height:1.4;font-size:14px}.t-form .uploadcare-widget-button:hover{background:#444}.t-input-title{display:block;height:100%;padding-right:10px}.t-input-subtitle{display:block;height:100%;padding-right:10px}.t-form__bottom-text{margin-top:30px;text-align:center}.t-input-error{display:none;color:red;font-size:13px;margin-top:5px}.t-form .js-error-control-box .t-input-error{display:block}.t-form .js-error-control-box .t-input:not(.t-input-phonemask),.t-form .js-error-control-box .t-checkbox__control,.t-form .js-error-control-box .t-checkboxes__wrapper,.t-form .js-error-control-box .t-select,.t-form .js-error-control-box .t-radio__wrapper,.t-form .js-error-control-box .uploadcare-widget{border:1px solid red!important}.t-form .js-error-control-box .t-checkboxes__wrapper,.t-form .js-error-control-box .t-radio__wrapper,.t-form .js-error-control-box .t-checkbox__control{padding:10px}.t-form .js-error-control-box .t-checkboxes__wrapper .t-checkbox__control{border:none!important;padding:0}.t-form .js-error-control-box .t-input.t-input_bbonly{padding-left:10px!important}.t-form__errorbox-bottom{display:none}.t-form__errorbox-wrapper{background:#F95D51;padding:10px;text-align:center;margin-bottom:20px}.t-form__errorbox-text{color:#fff;box-sizing:border-box;padding:0 10px 10px 10px}.t-form__errorbox-item{padding-top:10px;display:none}.t-form__successbox{text-align:center;background:#62C584;color:#fff;padding:20px;margin-bottom:20px}.t-form option{color:#000}@keyframes t-submit-spinner{to{transform:rotate(360deg)}}.t-form .t-submit{position:relative}.t-form .t-submit.t-btn_sending,.t-btn.t-btn_sending{color:transparent!important}.t-form .t-btn_sending:before,.t-btn.t-btn_sending:before{content:'';box-sizing:border-box;position:absolute;top:50%;left:50%;width:30px;height:30px;margin-top:-15px;margin-left:-15px;border-radius:50%;border:2px solid #ccc;border-top-color:#333;animation:t-submit-spinner .6s linear infinite}
     </style>
     
-    <!-- jQuery moved to bottom for better LCP -->
+    <!-- OPTIMIZED: Load jQuery at bottom of head to minimize render blocking -->
+    <script src="/js/jquery-3.7.1.min.js"></script>
     <!-- KEEP SCRIPTS IN SAME ORDER BUT OPTIMIZED -->
     <script src="js/scripts-3.0.min.js" onerror="this.loaderr='y';"></script>
 <script defer src="https://serniakmd.com/script.js" data-website-id="ddeeda92-f39a-4d6b-b071-53b0c3b38b55"></script>
@@ -314,7 +302,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
     
 </div>
- <div class="t189__descr t-descr t-descr_sm" style="color:#080808;" field="descr"><div style="font-size:24px;color:#030303;" data-customstyle="yes"><strong>Допоможемо позбутися урологічних проблем <br />у чоловіків та жінок</strong></div></div> </div> </div> </div> </div> </div> </div> <!-- arrow --> <div class="t-cover__arrow"><div class="t-cover__arrow-wrapper t-cover__arrow-wrapper_animated"><div class="t-cover__arrow_mobile"><svg class="t-cover__arrow-svg" style="fill:#121111;" x="0px" y="0px" width="38.417px" height="18.592px" viewBox="0 0 38.417 18.592" style="enable-background:new 0 0 38.417 18.592;"><g><path d="M19.208,18.592c-0.241,0-0.483-0.087-0.673-0.261L0.327,1.74c-0.408-0.372-0.438-1.004-0.066-1.413c0.372-0.409,1.004-0.439,1.413-0.066L19.208,16.24L36.743,0.261c0.411-0.372,1.042-0.342,1.413,0.066c0.372,0.408,0.343,1.041-0.065,1.413L19.881,18.332C19.691,18.505,19.449,18.592,19.208,18.592z"/></g></svg></div></div></div> <!-- arrow --> </div> </div><div id="rec51691010" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px;background-color:#efefef; content-visibility: auto;" data-animationappear="off" data-record-type="506" data-bg-color="#efefef"><!-- T506 --><!-- cover --><div class="t-cover" id="recorddiv51691010" bgimgfield="img" style="height:100vh; background-image:url('images/6561-3362-4239-a464-633931333363resize20xserniyak-3.webp');background-image:image-set(url('images/6561-3362-4239-a464-633931333363resize20xserniyak-3.avif') type('image/avif'),url('images/6561-3362-4239-a464-633931333363resize20xserniyak-3.webp') type('image/webp'),url('images/6561-3362-4239-a464-633931333363resize20xserniyak-3.jpg') type('image/jpeg'));" ><div class="t-cover__carrier" id="coverCarry51691010" data-content-cover-id="51691010" data-content-cover-bg="images/6561-3362-4239-a464-633931333363serniyak-3.webp" data-content-cover-height="100vh" data-content-cover-parallax="" style="height:100vh;background-attachment:scroll; "></div> <div class="t-cover__filter" style="height:100vh;background-image: -moz-linear-gradient(top, rgba(255,255,255,0.50), rgba(255,255,255,0.50));background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.50), rgba(255,255,255,0.50));background-image: -o-linear-gradient(top, rgba(255,255,255,0.50), rgba(255,255,255,0.50));background-image: -ms-linear-gradient(top, rgba(255,255,255,0.50), rgba(255,255,255,0.50));background-image: linear-gradient(top, rgba(255,255,255,0.50), rgba(255,255,255,0.50));filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#7fffffff', endColorstr='#7fffffff');"></div><div class="t506"> 
+ <div class="t189__descr t-descr t-descr_sm" style="color:#080808;" field="descr"><div style="font-size:24px;color:#030303;" data-customstyle="yes"><strong>Допоможемо позбутися урологічних проблем <br />у чоловіків та жінок</strong></div></div> </div> </div> </div> </div> </div> </div> <!-- arrow --> <div class="t-cover__arrow"><div class="t-cover__arrow-wrapper t-cover__arrow-wrapper_animated"><div class="t-cover__arrow_mobile"><svg class="t-cover__arrow-svg" style="fill:#121111;" x="0px" y="0px" width="38.417px" height="18.592px" viewBox="0 0 38.417 18.592" style="enable-background:new 0 0 38.417 18.592;"><g><path d="M19.208,18.592c-0.241,0-0.483-0.087-0.673-0.261L0.327,1.74c-0.408-0.372-0.438-1.004-0.066-1.413c0.372-0.409,1.004-0.439,1.413-0.066L19.208,16.24L36.743,0.261c0.411-0.372,1.042-0.342,1.413,0.066c0.372,0.408,0.343,1.041-0.065,1.413L19.881,18.332C19.691,18.505,19.449,18.592,19.208,18.592z"/></g></svg></div></div></div> <!-- arrow --> </div> </div><div id="rec51691010" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px;background-color:#efefef; " data-animationappear="off" data-record-type="506" data-bg-color="#efefef"><!-- T506 --><!-- cover --><div class="t-cover" id="recorddiv51691010" bgimgfield="img" style="height:100vh; background-image:url('images/6561-3362-4239-a464-633931333363resize20xserniyak-3.webp');background-image:image-set(url('images/6561-3362-4239-a464-633931333363resize20xserniyak-3.avif') type('image/avif'),url('images/6561-3362-4239-a464-633931333363resize20xserniyak-3.webp') type('image/webp'),url('images/6561-3362-4239-a464-633931333363resize20xserniyak-3.jpg') type('image/jpeg'));" ><div class="t-cover__carrier" id="coverCarry51691010" data-content-cover-id="51691010" data-content-cover-bg="images/6561-3362-4239-a464-633931333363serniyak-3.webp" data-content-cover-height="100vh" data-content-cover-parallax="" style="height:100vh;background-attachment:scroll; "></div> <div class="t-cover__filter" style="height:100vh;background-image: -moz-linear-gradient(top, rgba(255,255,255,0.50), rgba(255,255,255,0.50));background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.50), rgba(255,255,255,0.50));background-image: -o-linear-gradient(top, rgba(255,255,255,0.50), rgba(255,255,255,0.50));background-image: -ms-linear-gradient(top, rgba(255,255,255,0.50), rgba(255,255,255,0.50));background-image: linear-gradient(top, rgba(255,255,255,0.50), rgba(255,255,255,0.50));filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#7fffffff', endColorstr='#7fffffff');"></div><div class="t506"> 
   <div class="t-container"> 
   <div class="t-cover__wrapper t-valign_middle" style="height:100vh;"> 
   <div class="t506__wrapper" data-hook-content="covercontent"> 
@@ -383,7 +371,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   });
   </script>
   </div>
-  <div id="rec51693748" class="r t-rec t-rec_pb_0" style="padding-bottom:0px; content-visibility: auto;" data-record-type="546" >
+  <div id="rec51693748" class="r t-rec t-rec_pb_0" style="padding-bottom:0px; " data-record-type="546" >
     <!-- T546 -->
     <div class="t546">
     <div class="t546__blockimgmobile" style="display:none;">
@@ -1056,38 +1044,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
   });
 </script>
-
-<!-- jQuery moved to bottom for better LCP -->
-<script src="/js/jquery-3.7.1.min.js"></script>
-
-<!-- Non-critical CSS moved to bottom for better LCP -->
-<link rel="stylesheet" href="/css/animation-1.0.min.css" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="/css/animation-1.0.min.css"></noscript>
-
-<link rel="stylesheet" href="css/menusub-1.0.min.css" type="text/css" media="print" onload="this.media='all';" onerror="this.loaderr='y';" />
-<noscript>
-  <link rel="stylesheet" href="css/menusub-1.0.min.css" type="text/css" media="all" />
-</noscript>
-
-<link rel="stylesheet" href="css/popup-1.1.min.css" type="text/css" media="print" onload="this.media='all';" onerror="this.loaderr='y';" />
-<noscript>
-  <link rel="stylesheet" href="css/popup-1.1.min.css" type="text/css" media="all" />
-</noscript>
-
-<link rel="stylesheet" href="css/slds-1.4.min.css" type="text/css" media="print" onload="this.media='all';" onerror="this.loaderr='y';" />
-<noscript>
-  <link rel="stylesheet" href="css/slds-1.4.min.css" type="text/css" media="all" />
-</noscript>
-
-<link rel="stylesheet" href="css/zoom-2.0.min.css" type="text/css" media="print" onload="this.media='all';" onerror="this.loaderr='y';" />
-<noscript>
-  <link rel="stylesheet" href="css/zoom-2.0.min.css" type="text/css" media="all" />
-</noscript>
-
-<link rel="stylesheet" href="css/carousel-1.0.min.css" type="text/css" media="print" onload="this.media='all';" onerror="this.loaderr='y';" />
-<noscript>
-  <link rel="stylesheet" href="css/carousel-1.0.min.css" type="text/css" media="all" />
-</noscript>
 
  </body>
 </html>
