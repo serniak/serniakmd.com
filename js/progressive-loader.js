@@ -107,11 +107,11 @@
             } else {
                 element.style.backgroundImage = `url(${newSrc})`;
             }
-            
+
             // Remove blur and add loaded class
             element.style.filter = 'none';
             element.classList.add('progressive-loaded');
-            
+
             // Dispatch custom event
             element.dispatchEvent(new CustomEvent('progressiveLoaded', {
                 detail: { src: newSrc }
