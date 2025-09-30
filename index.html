@@ -56,9 +56,13 @@ html, body {
     <!-- Assets -->
     <script src="js/fallback-1.0.min.js" charset="utf-8" async></script>
 
-    <!-- Critical CSS loaded synchronously for instant LCP -->
-    <link rel="stylesheet" href="/css/grid-3.0.min.css">
-    <link rel="stylesheet" href="/css/blocks-2.14.css">
+    <!-- Critical CSS loaded asynchronously to prevent render blocking -->
+    <link rel="preload" href="/css/grid-3.0.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="/css/blocks-2.14.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="/css/grid-3.0.min.css">
+      <link rel="stylesheet" href="/css/blocks-2.14.css">
+    </noscript>
     
     <link rel="preconnect" href="https://fonts.gstatic.com">
     
@@ -88,7 +92,45 @@ html, body {
        line-gap-override: 0%;
      }
 
-      /* Critical CSS for LCP element - hero title */
+      /* Critical CSS for LCP element - hero section */
+      #rec51689810 { padding: 0; }
+      #recorddiv51689810 {
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+        background-image: url('images/6365-6561-4032-a437-333836663632img_5762-3.webp');
+        background-size: cover;
+        background-position: center;
+      }
+
+      .t-cover { position: relative; }
+      .t-cover__carrier { display: none; }
+      .t-cover__filter {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255,255,255,0.2);
+        z-index: 1;
+      }
+
+      .t-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .t-col { position: relative; }
+      .t-cover__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100vh;
+      }
+
       .t189__title.t-title {
         color: #0f0e0e;
         font-size: 36px;
@@ -97,11 +139,31 @@ html, body {
         line-height: 1.1;
         font-display: swap;
         size-adjust: 100.06%;
+        margin: 0;
       }
 
       .t189__title.t-title div[data-customstyle="yes"] {
         font-size: 34px;
         line-height: 36px;
+      }
+
+      .t189__descr {
+        color: #080808;
+        font-size: 24px;
+        margin-top: 20px;
+      }
+
+      @media (max-width: 640px) {
+        .t189__title.t-title {
+          font-size: 28px;
+        }
+        .t189__title.t-title div[data-customstyle="yes"] {
+          font-size: 26px;
+          line-height: 30px;
+        }
+        .t189__descr {
+          font-size: 18px;
+        }
       }
 
       /* Font loading optimization for all text elements */
@@ -181,7 +243,7 @@ html, body {
     }
     </style>
 
-     <!-- Critical CSS (grid, blocks, cover) kept in head for LCP -->
+     <!-- Critical CSS for cover loaded synchronously to prevent CLS -->
      <link rel="stylesheet" href="/css/cover-1.0.min.css">
     
     <script src="js/blocks-2.7.js?t=1651907903" defer onerror="this.loaderr='y';"></script>
@@ -212,7 +274,7 @@ html, body {
       console.log('✅ Polyfill loaded in HEAD');
     </script>
 
-    <!-- Load essential scripts synchronously to prevent ReferenceErrors -->
+    <!-- Load essential scripts synchronously to prevent dependency issues -->
     <script src="/js/jquery-3.7.1.min.js"></script>
     <script src="/js/scripts-3.0.min.js" onerror="this.loaderr='y';"></script>
      <!-- Progressive image loading -->
@@ -349,7 +411,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   
   </div> </div> </div></div><script>
   // Popup initialization moved to consolidated script at end of body
-  </script></div><div id="rec51689810" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-record-type="213" ><!-- cover --> <div class="t-cover" id="recorddiv51689810" bgimgfield="img" style="height:100vh;background-image:url('images/6365-6561-4032-a437-333836663632img_5762-3.webp');position:relative;overflow:hidden;" ><img src="images/6365-6561-4032-a437-333836663632img_5762-3.webp" alt="Клініка професора Серняка" fetchpriority="high" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;"><div class="t-cover__carrier" id="coverCarry51689810" data-content-cover-id="51689810" data-content-cover-bg="images/6365-6561-4032-a437-333836663632img_5762-3.webp" data-content-cover-height="100vh" data-content-cover-parallax="dynamic" style="height:100vh;background-image:url('images/6365-6561-4032-a437-333836663632img_5762-3.webp');background-size:cover;background-position:center center;background-attachment:scroll;"></div> <div class="t-cover__filter" style="height:100vh;background-image: -moz-linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));background-image: -o-linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));background-image: -ms-linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));background-image: linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ccffffff', endColorstr='#ccffffff');"></div><div class="t-container"> <div class="t-col t-col_7"><div class="t-cover__wrapper t-valign_middle" style="height:100vh; position: relative;z-index: 1;"> <div class="t189"> <div data-hook-content="covercontent"> <div class="t189__wrapper"> <div class="t189__title t-title" style="color:#0f0e0e; font-size:36px; font-family: 'Roboto', system-ui, sans-serif; font-weight:700; line-height:1.1;" field="title">
+  </script></div><div id="rec51689810" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-record-type="213" ><!-- cover --> <div class="t-cover" id="recorddiv51689810" bgimgfield="img" style="height:100vh;background-image:url('images/6365-6561-4032-a437-333836663632img_5762-3.webp');position:relative;overflow:hidden;" ><img src="images/6365-6561-4032-a437-333836663632img_5762-3.webp" alt="Клініка професора Серняка" width="1920" height="1280" fetchpriority="high" decoding="async" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;"><div class="t-cover__carrier" id="coverCarry51689810" data-content-cover-id="51689810" data-content-cover-bg="images/6365-6561-4032-a437-333836663632img_5762-3.webp" data-content-cover-height="100vh" data-content-cover-parallax="dynamic" style="height:100vh;background-image:url('images/6365-6561-4032-a437-333836663632img_5762-3.webp');background-size:cover;background-position:center center;background-attachment:scroll;"></div> <div class="t-cover__filter" style="height:100vh;background-image: -moz-linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));background-image: -o-linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));background-image: -ms-linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));background-image: linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ccffffff', endColorstr='#ccffffff');"></div><div class="t-container"> <div class="t-col t-col_7"><div class="t-cover__wrapper t-valign_middle" style="height:100vh; position: relative;z-index: 1;"> <div class="t189"> <div data-hook-content="covercontent"> <div class="t189__wrapper"> <div class="t189__title t-title" style="color:#0f0e0e; font-size:36px; font-family: 'Roboto', system-ui, sans-serif; font-weight:700; line-height:1.1;" field="title">
   <div style="font-size:34px; line-height:36px;" data-customstyle="yes" style="min-height: 100px;">
     <br />КЛІНІКА ПРОФЕСОРА СЕРНЯКА<br />УРОЛОГІЯ СВІТОВИХ СТАНДАРТІВ
   </div>
