@@ -56,12 +56,9 @@ html, body {
     <!-- Assets -->
     <script src="js/fallback-1.0.min.js" charset="utf-8" async></script>
 
-    <!-- Critical CSS loaded with preload for optimal performance -->
-    <link rel="preload" href="/css/grid-3.0.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/css/grid-3.0.min.css"></noscript>
-
-    <link rel="preload" href="/css/blocks-2.14.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/css/blocks-2.14.css"></noscript>
+    <!-- Critical CSS loaded synchronously for instant LCP -->
+    <link rel="stylesheet" href="/css/grid-3.0.min.css">
+    <link rel="stylesheet" href="/css/blocks-2.14.css">
     
     <link rel="preconnect" href="https://fonts.gstatic.com">
     
@@ -185,10 +182,7 @@ html, body {
     </style>
 
      <!-- Critical CSS (grid, blocks, cover) kept in head for LCP -->
-     <link rel="preload" href="/css/cover-1.0.min.css" as="style" onload="this.rel='stylesheet'">
-     <noscript>
-       <link rel="stylesheet" href="/css/cover-1.0.min.css">
-     </noscript>
+     <link rel="stylesheet" href="/css/cover-1.0.min.css">
     
     <script src="js/blocks-2.7.js?t=1651907903" defer onerror="this.loaderr='y';"></script>
     <script src="js/progressive-loader.js" charset="utf-8" async onerror="this.loaderr='y';"></script>
