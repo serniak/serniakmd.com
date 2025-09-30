@@ -919,22 +919,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   document.querySelector('head').insertAdjacentHTML('beforeend', '<style>@media screen and (max-width: 560px) { .t-body_scrollable-fix-for-android { overflow: visible !important; } }</style>');
   console.log('Android css fix was inited');
   }
-  /* Prevent scroll to top on form submission */
-  var form = document.getElementById('form51720405');
-  if (form) {
-  var submitBtn = form.querySelector('.t-submit');
-  if (submitBtn) {
-  submitBtn.addEventListener('click', function(e) {
-  var currentScrollPos = window.pageYOffset || document.documentElement.scrollTop;
-  window.formScrollPos = currentScrollPos;
-  setTimeout(function() {
-  if (window.formScrollPos !== undefined) {
-  window.scrollTo(0, window.formScrollPos);
-  }
-  }, 100);
-  });
-  }
-  }
   });</script></div><div id="rec51719804" class="r t-rec"  data-animationappear="off" data-record-type="570" ><!-- t570 --><div class="t570"> <div class="t-width t-width_100 t570__mainblock" style="margin:0 auto; background-color:#292929;"> <div class="t-map-lazyload t570__map t570__col" data-maplazy-load="false"><div class="t-map" id="separateMap51719804" data-map-language="" data-map-x="-74.005941" data-map-y="40.7127837" data-map-zoom="14" data-map-title="Прийом здійснюється: " style="width:100%; height:100vh;" data-map-style='[{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#d3d3d3"}]},{"featureType":"transit","stylers":[{"color":"#808080"},{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#b3b3b3"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"weight":1.8}]},{"featureType":"road.local","elementType":"geometry.stroke","stylers":[{"color":"#d7d7d7"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ebebeb"}]},{"featureType":"administrative","elementType":"geometry","stylers":[{"color":"#a7a7a7"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#efefef"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#696969"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"visibility":"on"},{"color":"#737373"}]},{"featureType":"poi","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#d6d6d6"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#dadada"}]}]' ></div><script type="text/javascript"> var arMapMarkers51719804 = [
   {
   title:"вул. Клінічна 4, офіс 18",
@@ -1266,32 +1250,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             // Popup just opened
             popupIsOpen = true;
 
-            // Apply fix if not already applied (backup for non-link popup triggers)
-            if (document.body.style.position !== 'fixed') {
-              var allRecords = document.getElementById('allrecords');
-
-              document.documentElement.style.position = 'fixed';
-              document.documentElement.style.top = '-' + savedScrollPosition + 'px';
-              document.documentElement.style.left = '0';
-              document.documentElement.style.right = '0';
-              document.documentElement.style.width = '100%';
-              document.documentElement.style.overflow = 'hidden';
-
-              document.body.style.position = 'fixed';
-              document.body.style.top = '-' + savedScrollPosition + 'px';
-              document.body.style.left = '0';
-              document.body.style.right = '0';
-              document.body.style.width = '100%';
-              document.body.style.overflow = 'hidden';
-
-              if (allRecords) {
-                allRecords.style.position = 'fixed';
-                allRecords.style.top = '-' + savedScrollPosition + 'px';
-                allRecords.style.left = '0';
-                allRecords.style.right = '0';
-                allRecords.style.width = '100%';
+            // Tilda will set position:fixed with top:0, we need to override this
+            // Use a short delay to let Tilda apply its styles first
+            setTimeout(function() {
+              if (popupIsOpen) {
+                document.body.style.top = '-' + savedScrollPosition + 'px';
               }
-            }
+            }, 0);
           } else if (!hasPopupClass && popupIsOpen && !isRestoring) {
             // Popup was closed
             restoreScroll();
@@ -1300,10 +1265,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       });
     });
 
-    // Start observing body for class changes
+    // Monitor body style changes to prevent Tilda from changing the top position
+    var styleObserver = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'style' && popupIsOpen && !isRestoring) {
+          var currentTop = document.body.style.top;
+          var expectedTop = '-' + savedScrollPosition + 'px';
+
+          // If Tilda changed the top position, correct it
+          if (currentTop !== expectedTop && document.body.style.position === 'fixed') {
+            document.body.style.top = expectedTop;
+          }
+        }
+      });
+    });
+
+    // Start observing body for class and style changes
     bodyObserver.observe(document.body, {
       attributes: true,
       attributeFilter: ['class']
+    });
+
+    styleObserver.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['style']
     });
 
     // Intercept clicks on popup links BEFORE they reach Tilda
@@ -1318,35 +1303,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if (target && target.tagName === 'A') {
         var href = target.getAttribute('href');
         if (href && href.indexOf('#popup:') === 0) {
+          // Prevent default anchor behavior to stop scrolling
+          e.preventDefault();
+
           // Save current scroll position
           savedScrollPosition = window.pageYOffset || document.documentElement.scrollTop || 0;
 
-          // Apply the fix IMMEDIATELY before Tilda opens the popup
-          var allRecords = document.getElementById('allrecords');
-
-          document.documentElement.style.position = 'fixed';
-          document.documentElement.style.top = '-' + savedScrollPosition + 'px';
-          document.documentElement.style.left = '0';
-          document.documentElement.style.right = '0';
-          document.documentElement.style.width = '100%';
-          document.documentElement.style.overflow = 'hidden';
-
-          document.body.style.position = 'fixed';
-          document.body.style.top = '-' + savedScrollPosition + 'px';
-          document.body.style.left = '0';
-          document.body.style.right = '0';
-          document.body.style.width = '100%';
-          document.body.style.overflow = 'hidden';
-
-          if (allRecords) {
-            allRecords.style.position = 'fixed';
-            allRecords.style.top = '-' + savedScrollPosition + 'px';
-            allRecords.style.left = '0';
-            allRecords.style.right = '0';
-            allRecords.style.width = '100%';
+          // Trigger the popup manually using Tilda's method
+          var popupId = href.replace('#popup:', '');
+          var popup = document.querySelector('[data-tooltip-hook="#popup:' + popupId + '"]');
+          if (popup) {
+            popup.style.display = 'block';
+            document.body.classList.add('t-body_popupshowed');
           }
-
-          popupIsOpen = true;
         }
       }
     }, true); // Use capture phase to run before Tilda's handlers
@@ -1356,32 +1325,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       isRestoring = true;
       popupIsOpen = false;
 
-      var allRecords = document.getElementById('allrecords');
-
-      // Remove our custom styles from html element
-      document.documentElement.style.position = '';
-      document.documentElement.style.top = '';
-      document.documentElement.style.left = '';
-      document.documentElement.style.right = '';
-      document.documentElement.style.width = '';
-      document.documentElement.style.overflow = '';
-
-      // Remove our custom styles from body
+      // Remove the fixed positioning
       document.body.style.position = '';
       document.body.style.top = '';
-      document.body.style.left = '';
-      document.body.style.right = '';
       document.body.style.width = '';
       document.body.style.overflow = '';
-
-      // Remove our custom styles from allrecords
-      if (allRecords) {
-        allRecords.style.position = '';
-        allRecords.style.top = '';
-        allRecords.style.left = '';
-        allRecords.style.right = '';
-        allRecords.style.width = '';
-      }
 
       // Restore scroll position
       window.scrollTo(0, savedScrollPosition);
