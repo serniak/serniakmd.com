@@ -50,7 +50,7 @@ html, body {
     <link rel="dns-prefetch" href="//api-gateway.umami.dev">
     
     <!-- Preload critical hero image with high priority for instant LCP -->
-    <link rel="preload" as="image" href="images/6365-6561-4032-a437-333836663632img_5762-3.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="images/6365-6561-4032-a437-333836663632img_5762-3.webp" type="image/webp" fetchpriority="high" imagesrcset="images/6365-6561-4032-a437-333836663632img_5762-3.webp 1920w" imagesizes="100vw">
     
     <!-- Assets -->
     <script src="js/fallback-1.0.min.js" charset="utf-8" async></script>
@@ -84,26 +84,43 @@ html, body {
      <style>
      @font-face {
        font-family: 'Roboto Fallback';
-       src: local('Arial'), local('Helvetica'), local('system-ui');
-       size-adjust: 100.06%;
-       ascent-override: 92%;
-       descent-override: 24%;
+       src: local('Arial');
+       size-adjust: 100%;
+       ascent-override: 92.77%;
+       descent-override: 24.41%;
        line-gap-override: 0%;
      }
 
       /* Critical CSS for LCP element - hero section */
-      #rec51689810 { padding: 0; }
+      #rec51689810 {
+        padding: 0;
+        contain: layout style;
+      }
+
       #recorddiv51689810 {
         height: 100vh;
         position: relative;
         overflow: hidden;
-        background-image: url('images/6365-6561-4032-a437-333836663632img_5762-3.webp');
-        background-size: cover;
-        background-position: center;
       }
 
-      .t-cover { position: relative; }
-      .t-cover__carrier { display: none; }
+      #recorddiv51689810 picture,
+      #recorddiv51689810 img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        will-change: auto;
+      }
+
+      .t-cover {
+        position: relative;
+        contain: layout style paint;
+      }
+
+      .t-cover__carrier { display: none !important; }
+
       .t-cover__filter {
         position: absolute;
         top: 0;
@@ -112,6 +129,7 @@ html, body {
         bottom: 0;
         background: rgba(255,255,255,0.2);
         z-index: 1;
+        pointer-events: none;
       }
 
       .t-container {
@@ -400,7 +418,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   
   </div> </div> </div></div><script>
   // Popup initialization moved to consolidated script at end of body
-  </script></div><div id="rec51689810" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-record-type="213" ><!-- cover --> <div class="t-cover" id="recorddiv51689810" bgimgfield="img" style="height:100vh;background-image:url('images/6365-6561-4032-a437-333836663632img_5762-3.webp');position:relative;overflow:hidden;" ><img src="images/6365-6561-4032-a437-333836663632img_5762-3.webp" alt="Клініка професора Серняка" width="1920" height="1280" fetchpriority="high" decoding="async" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;"><div class="t-cover__carrier" id="coverCarry51689810" data-content-cover-id="51689810" data-content-cover-bg="images/6365-6561-4032-a437-333836663632img_5762-3.webp" data-content-cover-height="100vh" data-content-cover-parallax="dynamic" style="height:100vh;background-image:url('images/6365-6561-4032-a437-333836663632img_5762-3.webp');background-size:cover;background-position:center center;background-attachment:scroll;"></div> <div class="t-cover__filter" style="height:100vh;background-image: -moz-linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));background-image: -o-linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));background-image: -ms-linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));background-image: linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ccffffff', endColorstr='#ccffffff');"></div><div class="t-container"> <div class="t-col t-col_7"><div class="t-cover__wrapper t-valign_middle" style="height:100vh; position: relative;z-index: 1;"> <div class="t189"> <div data-hook-content="covercontent"> <div class="t189__wrapper"> <div class="t189__title t-title" style="color:#0f0e0e; font-size:36px; font-family: 'Roboto', system-ui, sans-serif; font-weight:700; line-height:1.1;" field="title">
+  </script></div><div id="rec51689810" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-record-type="213" ><!-- cover --> <div class="t-cover" id="recorddiv51689810" bgimgfield="img" style="height:100vh;position:relative;overflow:hidden;" ><picture><source srcset="images/6365-6561-4032-a437-333836663632img_5762-3.webp" type="image/webp"><img src="images/6365-6561-4032-a437-333836663632img_5762-3.jpg" alt="Клініка професора Серняка" width="1920" height="1280" fetchpriority="high" loading="eager" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;"></picture><div class="t-cover__carrier" id="coverCarry51689810" data-content-cover-id="51689810" data-content-cover-bg="" data-content-cover-height="100vh" data-content-cover-parallax="dynamic" style="height:100vh;display:none;"></div> <div class="t-cover__filter" style="height:100vh;background-image: -moz-linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));background-image: -o-linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));background-image: -ms-linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));background-image: linear-gradient(top, rgba(255,255,255,0.20), rgba(255,255,255,0.20));filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ccffffff', endColorstr='#ccffffff');"></div><div class="t-container"> <div class="t-col t-col_7"><div class="t-cover__wrapper t-valign_middle" style="height:100vh; position: relative;z-index: 1;"> <div class="t189"> <div data-hook-content="covercontent"> <div class="t189__wrapper"> <div class="t189__title t-title" style="color:#0f0e0e; font-size:36px; font-family: 'Roboto', system-ui, sans-serif; font-weight:700; line-height:1.1;" field="title">
   <div style="font-size:34px; line-height:36px;" data-customstyle="yes" style="min-height: 100px;">
     <br />КЛІНІКА ПРОФЕСОРА СЕРНЯКА<br />УРОЛОГІЯ СВІТОВИХ СТАНДАРТІВ
   </div>
@@ -480,9 +498,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="t546">
     <div class="t546__blockimgmobile" style="display:none;">
         <picture>
-          <source srcset="images/3864-6533-4337-b661-316466663461img_5564-2.avif" type="image/avif">
-          <source srcset="images/3864-6533-4337-b661-316466663461img_5564-2.webp" type="image/webp">
-          <img src="images/3864-6533-4337-b661-316466663461emptyimg_5564-2.jpg" data-original="images/3864-6533-4337-b661-316466663461img_5564-2.webp" class="t546__imgmobile t-img" loading="lazy" alt="Portrait of Professor Yurii Serniak">
+          <source srcset="images/3864-6533-4337-b661-316466663461resize412ximg_5564-2.avif" type="image/avif">
+          <source srcset="images/3864-6533-4337-b661-316466663461resize412ximg_5564-2.webp" type="image/webp">
+          <img src="images/3864-6533-4337-b661-316466663461emptyimg_5564-2.jpg" data-original="images/3864-6533-4337-b661-316466663461resize412ximg_5564-2.webp" class="t546__imgmobile t-img" width="412" height="618" loading="lazy" alt="Portrait of Professor Yurii Serniak">
         </picture>
     </div> 
     <table class="t546__blocktable" data-height-correct-vh="yes"> 
@@ -509,7 +527,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </div> 
             </div> 
         </td> 
-            <td class="t546__blockimg t-bgimg" bgimgfiled="img" data-original="images/3864-6533-4337-b661-316466663461img_5564-2.webp" style="background-image:url('images/3864-6533-4337-b661-316466663461resizeb20ximg_5564-2.jpg');"></td> </tr> </table></div></div><div id="rec52052771" class="r t-rec t-rec_pt_45 t-rec_pb_0" style="padding-top:45px;padding-bottom:0px; " data-record-type="594" ><!-- t594 --><div class="t594"><div class="t-section__container t-container"><div class="t-col t-col_12"><div class="t-section__topwrapper t-align_center"><div class="t-section__title t-title t-title_xs" field="btitle">Сертифікати та ліцензії</div></div></div></div><div class="t594__container t-container"> <div class="t-col t594__item t594__item_5-in-row"> 
+            <td class="t546__blockimg t-bgimg" bgimgfiled="img" data-original="images/3864-6533-4337-b661-316466663461resize800ximg_5564-2.webp" style="background-image:url('images/3864-6533-4337-b661-316466663461resizeb20ximg_5564-2.jpg');"></td> </tr> </table></div></div><div id="rec52052771" class="r t-rec t-rec_pt_45 t-rec_pb_0" style="padding-top:45px;padding-bottom:0px; " data-record-type="594" ><!-- t594 --><div class="t594"><div class="t-section__container t-container"><div class="t-col t-col_12"><div class="t-section__topwrapper t-align_center"><div class="t-section__title t-title t-title_xs" field="btitle">Сертифікати та ліцензії</div></div></div></div><div class="t594__container t-container"> <div class="t-col t594__item t594__item_5-in-row"> 
     
         <picture>
 
@@ -517,28 +535,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
            <img src="images/3632-6137-4161-b635-363134643137emptyeau.webp" data-original="images/3632-6137-4161-b635-363134643137resize166xeau.webp" class="t594__img t-img " imgfield="li_img__1481203544538" style="max-width:200px;" width="165" height="41" loading="lazy" alt="Society International of Urology Logo" />
         </picture> 
     </div> 
-     <div class="t-col t594__item t594__item_5-in-row"> 
-        <img src="images/sernyak44.webp" data-original="images/sernyak4.jpg" data-progressive="true" data-progressive-low="images/sernyak44.webp" data-progressive-high="images/sernyak4.jpg" data-progressive-webp="images/sernyak4.webp" data-progressive-avif="images/sernyak4.avif" class="t594__img t-img " imgfield="li_img__1481205129244" style="max-width:200px;" loading="lazy" alt="The Société Internationale d'Urologie Logo">
+     <div class="t-col t594__item t594__item_5-in-row">
+        <picture>
+          <source srcset="images/sernyak4.avif" type="image/avif">
+          <source srcset="images/sernyak4.webp" type="image/webp">
+          <img src="images/sernyak4.jpg" class="t594__img t-img " imgfield="li_img__1481205129244" style="max-width:200px;" loading="lazy" alt="The Société Internationale d'Urologie Logo">
+        </picture>
       </div> 
        <div class="t-col t594__item t594__item_5-in-row">
         <picture>
           <source srcset="images/6532-3736-4630-a630-383463386132resize166xe5a01cff-ffd3-4389-9.avif" type="image/avif">
           <source srcset="images/6532-3736-4630-a630-383463386132resize166xe5a01cff-ffd3-4389-9.webp" type="image/webp">
-          <img src="images/6532-3736-4630-a630-383463386132emptye5a01cff-ffd3-4389-9.jpg"  data-original="images/6532-3736-4630-a630-383463386132resize166xe5a01cff-ffd3-4389-9.webp" class="t594__img t-img " imgfield="li_img__1481205877302" style="max-width:200px;" loading="lazy" alt="American Urological Association Logo" />
+          <img src="images/6532-3736-4630-a630-383463386132emptye5a01cff-ffd3-4389-9.jpg"  data-original="images/6532-3736-4630-a630-383463386132resize166xe5a01cff-ffd3-4389-9.webp" class="t594__img t-img " imgfield="li_img__1481205877302" style="max-width:200px;" width="166" height="100" loading="lazy" alt="American Urological Association Logo" />
         </picture>
        </div>
        <div class="t-col t594__item t594__item_5-in-row">
         <picture>
 
           <source srcset="images/6235-3062-4263-b037-623066613934resize166xdoctor-nauk2-4.webp" type="image/webp">
-          <img src="images/6235-3062-4263-b037-623066613934emptydoctor-nauk2-4.jpg" data-original="images/6235-3062-4263-b037-623066613934resize166xdoctor-nauk2-4.webp" class="t594__img t-img " imgfield="li_img__1525795704517" style="max-width:200px;" loading="lazy" alt="Doctor of Science Diploma" />
+          <img src="images/6235-3062-4263-b037-623066613934emptydoctor-nauk2-4.jpg" data-original="images/6235-3062-4263-b037-623066613934resize166xdoctor-nauk2-4.webp" class="t594__img t-img " imgfield="li_img__1525795704517" style="max-width:200px;" width="166" height="87" loading="lazy" alt="Doctor of Science Diploma" />
         </picture>
        </div>
        <div class="t-col t594__item t594__item_5-in-row">
         <picture>
           <source srcset="images/6534-3464-4334-a330-346131383538resize166xprofessor.avif" type="image/avif">
           <source srcset="images/6534-3464-4334-a330-346131383538resize166xprofessor.webp" type="image/webp">
-          <img src="images/6534-3464-4334-a330-346131383538emptyprofessor.webp" data-original="images/6534-3464-4334-a330-346131383538resize166xprofessor.webp" class="t594__img t-img " imgfield="li_img__1528096230585" style="max-width:200px;" alt="Professor's certificate" />
+          <img src="images/6534-3464-4334-a330-346131383538emptyprofessor.webp" data-original="images/6534-3464-4334-a330-346131383538resize166xprofessor.webp" class="t594__img t-img " imgfield="li_img__1528096230585" style="max-width:200px;" width="166" height="106" loading="lazy" alt="Professor's certificate" />
         </picture>
        </div>
       </div>
