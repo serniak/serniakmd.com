@@ -48,8 +48,6 @@ html, body {
     <!-- OPTIMIZATION: Preconnect to Umami analytics for 300ms performance improvement -->
     <link rel="preconnect" href="https://api-gateway.umami.dev" crossorigin>
     <link rel="dns-prefetch" href="//api-gateway.umami.dev">
-    <link rel="preload" href="js/scripts-3.0.min.js" as="script">
-    <link rel="preload" href="script.js" as="script">
     
     <!-- Preload critical hero image with high priority for instant LCP -->
     <link rel="preload" as="image" href="images/6365-6561-4032-a437-333836663632img_5762-3.webp" fetchpriority="high">
@@ -244,27 +242,18 @@ html, body {
     }
     </style>
 
-     <!-- Critical CSS for cover loaded synchronously to prevent CLS -->
-     <link rel="stylesheet" href="/css/cover-1.0.min.css">
-    
-    <script src="js/blocks-2.7.js?t=1651907903" defer onerror="this.loaderr='y';"></script>
-    <script src="js/progressive-loader.js" charset="utf-8" async onerror="this.loaderr='y';"></script>
-    <script src="js/lazyload-1.3.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script>
-    <script src="js/animation-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script>
-    <script src="js/events-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script>
-    <script src="js/menusub-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script>
-    <script src="js/slds-1.4.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script>
-    <link rel="stylesheet" href="css/slds-1.4.min.css" type="text/css" media="print" onload="this.media='all';" onerror="this.loaderr='y';" />
-    <noscript>
-      <link rel="stylesheet" href="css/slds-1.4.min.css" type="text/css" media="all" />
-    </noscript>
-    <script src="js/hammer.min.js" defer charset="utf-8" async onerror="this.loaderr='y';"></script>
-    <script src="js/zoom-2.0.min.js" defer charset="utf-8" async onerror="this.loaderr='y';"></script>
-    <script src="js/map-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script>
+     <!-- Critical CSS inlined to eliminate render-blocking -->
+     <style>
+.t-cover{height:700px;width:100%;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;background-color:#000;background-repeat:no-repeat;background-position:center center;text-align:center;vertical-align:middle;position:relative;background-attachment:fixed;overflow:hidden}.t-cover__carrier{height:700px;width:100%;background-size:cover;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-repeat:no-repeat;background-position:center center;text-align:center;vertical-align:middle;position:relative;background-attachment:fixed;transform:translate3d(0,0,0);-webkit-transform:translate3d(0,0,0);-moz-transform:unset}@supports (-ms-ime-align:auto){.t-cover__carrier{transform:unset}}.t-cover__carrier.loading{opacity:0}.t-cover__carrier[data-content-cover-bg=""].loading{opacity:1!important}.t-cover__carrier.loaded{opacity:1;transition:opacity .7s}@media screen and (max-device-width:1024px){.t-cover{background-attachment:scroll}.t-cover__carrier{background-attachment:scroll}}@media print{.t-cover{background-attachment:scroll}.t-cover__carrier{background-attachment:scroll}}.t-cover__filter{height:700px;width:100%;position:absolute;top:0;left:0}.t-cover .t-container,.t-cover .t-container_10,.t-cover .t-container_100,.t-cover .t-container_8{position:absolute;top:0;left:0;bottom:0;right:0}.t-cover__wrapper{height:700px;display:table-cell;width:1200px}.t-cover__wrapper span.space{display:inline-block;height:100%;width:1px}@media screen and (max-width:640px){.t-cover{height:400px;background-attachment:fixed}.t-cover__carrier{background-attachment:scroll!important;background-size:cover;background-position:center center}.t-cover__filter{height:400px}.t-cover__wrapper{height:400px}}@-webkit-keyframes t-arrow-bottom{0%{-moz-transform:translateY(0);-ms-transform:translateY(0);-webkit-transform:translateY(0);-o-transform:translateY(0);transform:translateY(0)}50%{-moz-transform:translateY(-7px);-ms-transform:translateY(-7px);-webkit-transform:translateY(-7px);-o-transform:translateY(-7px);transform:translateY(-7px)}55%{-moz-transform:translateY(-7px);-ms-transform:translateY(-7px);-webkit-transform:translateY(-7px);-o-transform:translateY(-7px);transform:translateY(-7px)}100%{-moz-transform:translateY(0);-ms-transform:translateY(0);-webkit-transform:translateY(0);-o-transform:translateY(0);transform:translateY(0)}}@keyframes t-arrow-bottom{0%{-moz-transform:translateY(0);-ms-transform:translateY(0);-webkit-transform:translateY(0);-o-transform:translateY(0);transform:translateY(0)}50%{-moz-transform:translateY(-7px);-ms-transform:translateY(-7px);-webkit-transform:translateY(-7px);-o-transform:translateY(-7px);transform:translateY(-7px)}55%{-moz-transform:translateY(-7px);-ms-transform:translateY(-7px);-webkit-transform:translateY(-7px);-o-transform:translateY(-7px);transform:translateY(-7px)}100%{-moz-transform:translateY(0);-ms-transform:translateY(0);-webkit-transform:translateY(0);-o-transform:translateY(0);transform:translateY(0)}}.t-cover__arrow-wrapper_animated{animation:t-arrow-bottom 1.7s infinite ease}.t-cover__arrow{position:absolute;z-index:9;bottom:40px;right:0;left:0;text-align:center}.t-cover__arrow-wrapper{display:inline-block;-webkit-transition:all ease-in-out .2s;-moz-transition:all ease-in-out .2s;-o-transition:all ease-in-out .2s;transition:all ease-in-out .2s;cursor:pointer}.t-cover__arrow-wrapper:hover{opacity:.7}.t-cover__arrow-svg{fill:#fff}@media screen and (max-width:640px){.t-cover__arrow_mobile{-moz-transform:scale(.7);-ms-transform:scale(.7);-webkit-transform:scale(.7);-o-transform:scale(.7);transform:scale(.7)}.t-cover__arrow{bottom:14px}}
+     </style>
 
     <style>
     .t-submit{text-align:center;height:60px;border:0 none;font-size:16px;padding-left:60px;padding-right:60px;-webkit-appearance:none;appearance:none;font-weight:700;white-space:nowrap;background-image:none;cursor:pointer;margin:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;outline:none;background:transparent}.t-submit_sending{opacity:.5}@media screen and (max-width:640px){.t-submit{white-space:normal;padding-left:30px;padding-right:30px}}.t-input{margin:0;font-size:100%;height:60px;padding:0 20px;font-size:16px;line-height:1.33;width:100%;border:0 none;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;outline:none;-webkit-appearance:none;appearance:none;border-radius:0}.t-input::-moz-focus-inner{padding:0;border:0}.t-input_bbonly{outline:none;padding-left:0!important;padding-right:0!important;border-top:0!important;border-right:0!important;border-left:0!important;background-color:transparent!important;border-radius:0!important;border-bottom:1px solid}.t-input_pvis{padding:26px 20px 10px 20px}.tn-atom__form .t-input_pvis{padding:26px 20px 10px 20px!important}.t-input__vis-ph{font-size:16px;line-height:1;opacity:.5;position:absolute;left:20px;top:22px;height:16px;-webkit-transform:translateZ(0);transform:translateZ(0);-webkit-transition:transform 0.2s linear;transition:transform 0.2s linear;-webkit-transform-origin:left;transform-origin:left;pointer-events:none;white-space:nowrap}.t-input:focus~.t-input__vis-ph,.t-input_has-content+.t-input__vis-ph{-webkit-transform:translateY(-100%) scale(.7);transform:translateY(-100%) scale(.7)}.t-input:invalid{box-shadow:none}.t-input-group_cb div[data-customstyle=yes]{display:inline;vertical-align:middle}.t-form_bbonly .t-input__vis-ph{left:0px!important}.t-form_bbonly .js-error-control-box .t-input__vis-ph{left:10px!important}.t-input-group_ta textarea.t-input{resize:vertical}.t-select{width:100%;box-sizing:border-box;cursor:pointer;height:60px;padding:0 45px 0 20px;font-size:16px;line-height:1.33;outline:0;border:0;border-radius:0;background:transparent;-webkit-appearance:none;appearance:none;-moz-appearance:none}.t-select_bbonly{outline:none;padding-left:0!important;padding-right:0!important;border-top:0!important;border-right:0!important;border-left:0!important;background-color:transparent!important;border-radius:0!important}.t-select_bbonly option{color:#000;background-color:#fff}.t-select__wrapper{position:relative}.t-select__wrapper:after{content:' ';width:0;height:0;border-style:solid;border-width:6px 5px 0 5px;border-color:#000 transparent transparent transparent;position:absolute;right:20px;top:0;bottom:0;margin:auto;pointer-events:none}.t-select::-ms-expand{width:0;height:0;opacity:0}.t-select__wrapper_bbonly::after{right:0px!important}.t-checkbox__control{display:block;position:relative;cursor:pointer}.t-checkbox__control .t-checkbox{position:absolute;z-index:-1;opacity:0}.t-checkbox__indicator{position:relative;display:inline-block;vertical-align:middle;height:20px;width:20px;border:2px solid #000;box-sizing:border-box;margin-right:10px;-webkit-transition:all 0.2s;transition:all 0.2s;opacity:.6}.t-checkbox__indicator:after{content:'';position:absolute;display:none;left:6px;top:2px;width:3px;height:8px;border:solid #000;border-width:0 2px 2px 0;transform:rotate(45deg)}.t-checkbox__control .t-checkbox:checked~.t-checkbox__indicator{opacity:1}.t-checkbox__control .t-checkbox:checked~.t-checkbox__indicator:after{display:block}.t-checkbox__labeltext,.t-checkbox__labeltext div{display:inline}.t-checkboxes__wrapper .t-checkbox__control{margin:10px 0}.t-radio{position:absolute;z-index:-1;opacity:0}.t-radio__control{display:table;position:relative;cursor:pointer;margin:0 0 10px 0}.t-radio__control:first-child{margin:3px 0 10px 0}.t-radio__control:last-child{margin:0 0 0 0}.t-radio__indicator{position:relative;display:inline-block;vertical-align:middle;height:20px;width:20px;border-color:#000;border-style:solid;border-width:2px;box-sizing:border-box;border-radius:50%;margin-right:10px;-webkit-transition:all 0.2s;transition:all 0.2s;opacity:.6}.t-radio__indicator:after{content:'';width:10px;height:10px;background:#000;border-radius:50%;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;opacity:0;-webkit-transition:all 0.2s;transition:all 0.2s}.t-radio__control .t-radio:checked~.t-radio__indicator:after{opacity:1}.t-radio__control .t-radio:checked~.t-radio__indicator{opacity:1}.t-inputquantity{width:70px;text-align:center;margin-left:.5rem;margin-right:.5rem}.t-inputquantity__btn{font-size:26px;cursor:pointer;margin-left:.5rem;margin-right:.5rem;-webkit-user-select:none;-moz-user-select:none;-khtml-user-select:none;-ms-user-select:none;user-select:none}.t-form .uploadcare-widget-button{background:#333;line-height:1.4;font-size:14px}.t-form .uploadcare-widget-button:hover{background:#444}.t-input-title{display:block;height:100%;padding-right:10px}.t-input-subtitle{display:block;height:100%;padding-right:10px}.t-form__bottom-text{margin-top:30px;text-align:center}.t-input-error{display:none;color:red;font-size:13px;margin-top:5px}.t-form .js-error-control-box .t-input-error{display:block}.t-form .js-error-control-box .t-input:not(.t-input-phonemask),.t-form .js-error-control-box .t-checkbox__control,.t-form .js-error-control-box .t-checkboxes__wrapper,.t-form .js-error-control-box .t-select,.t-form .js-error-control-box .t-radio__wrapper,.t-form .js-error-control-box .uploadcare-widget{border:1px solid red!important}.t-form .js-error-control-box .t-checkboxes__wrapper,.t-form .js-error-control-box .t-radio__wrapper,.t-form .js-error-control-box .t-checkbox__control{padding:10px}.t-form .js-error-control-box .t-checkboxes__wrapper .t-checkbox__control{border:none!important;padding:0}.t-form .js-error-control-box .t-input.t-input_bbonly{padding-left:10px!important}.t-form__errorbox-bottom{display:none}.t-form__errorbox-wrapper{background:#F95D51;padding:10px;text-align:center;margin-bottom:20px}.t-form__errorbox-text{color:#fff;box-sizing:border-box;padding:0 10px 10px 10px}.t-form__errorbox-item{padding-top:10px;display:none}.t-form__successbox{text-align:center;background:#62C584;color:#fff;padding:20px;margin-bottom:20px}.t-form option{color:#000}@keyframes t-submit-spinner{to{transform:rotate(360deg)}}.t-form .t-submit{position:relative}.t-form .t-submit.t-btn_sending,.t-btn.t-btn_sending{color:transparent!important}.t-form .t-btn_sending:before,.t-btn.t-btn_sending:before{content:'';box-sizing:border-box;position:absolute;top:50%;left:50%;width:30px;height:30px;margin-top:-15px;margin-left:-15px;border-radius:50%;border:2px solid #ccc;border-top-color:#333;animation:t-submit-spinner .6s linear infinite}
     </style>
+
+    <!-- Preload critical JavaScript for faster loading -->
+    <link rel="preload" href="/js/jquery-3.7.1.min.js" as="script">
+    <link rel="preload" href="/js/scripts-3.0.min.js" as="script">
 
     <!-- Critical inline polyfill - must load before any inline scripts -->
     <script>
@@ -272,13 +261,12 @@ html, body {
       window.t_throttle = function(n,o,a){var r,s;return o=o||250,function(){var t=a||this,e=+new Date,i=arguments;r&&e<r+o?(clearTimeout(s),s=setTimeout(function(){r=e,n.apply(t,i)},o)):(r=e,n.apply(t,i))}};
       window.t_onReady = function(t){"loading"!=document.readyState?t():document.addEventListener("DOMContentLoaded",t)};
       window.t_onFuncLoad = function(i,n,o){var a;"function"==typeof window[i]?n():(a=Date.now(),setTimeout(function t(){var e=Date.now();if("function"!=typeof window[i]){if("complete"===document.readyState&&5e3<e-a)return;setTimeout(t,o||100)}else n()}))};
-      console.log('✅ Polyfill loaded in HEAD');
     </script>
 
-    <!-- Load essential scripts synchronously to prevent dependency issues -->
+    <!-- Load essential scripts with async for non-blocking -->
     <script src="/js/jquery-3.7.1.min.js"></script>
-    <script src="/js/scripts-3.0.min.js" onerror="this.loaderr='y';"></script>
-     <!-- Progressive image loading -->
+    <script async src="/js/scripts-3.0.min.js" onerror="this.loaderr='y';"></script>
+     <!-- Progressive image loading and analytics -->
      <script defer src="js/progressive-loader.js" onerror="this.loaderr='y';"></script>
  <script defer src="https://serniakmd.com/script.js" data-website-id="ddeeda92-f39a-4d6b-b071-53b0c3b38b55"></script>
 
@@ -662,7 +650,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </script>
 
  <!-- Elfsight Google Reviews | Untitled Google Reviews -->
-<script src="https://static.elfsight.com/platform/platform.js" async></script>
+<script src="https://static.elfsight.com/platform/platform.js" defer></script>
 <div class="elfsight-app-7ebde729-6b89-43eb-8622-d4638d36a58f" data-elfsight-app-lazy></div>
 
   <style type="text/css"> #rec51694322 .t-slds__bullet_active .t-slds__bullet_body {
@@ -1049,7 +1037,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Google Reviews Widget below social icons -->
     <div style="margin-top: 10px;">
       <!-- Elfsight Google Reviews | Untitled Google Reviews 3 -->
-      <script src="https://static.elfsight.com/platform/platform.js" async></script>
+      <script src="https://static.elfsight.com/platform/platform.js" defer></script>
       <div class="elfsight-app-1032ff72-6b20-4711-8601-3bd30014ba8f" data-elfsight-app-lazy style="max-width: 200px; text-align: left !important; float: none !important; display: inline-block !important;"></div>
     </div>
     
@@ -1190,33 +1178,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   });
 </script>
 
-<!-- jQuery moved back to head for reviews and maps functionality -->
-
-<!-- Non-critical CSS moved to bottom for better LCP -->
-<link rel="stylesheet" href="/css/animation-1.0.min.css" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="/css/animation-1.0.min.css"></noscript>
-
-<link rel="stylesheet" href="css/menusub-1.0.min.css" type="text/css" media="print" onload="this.media='all';" onerror="this.loaderr='y';" />
-<noscript>
-  <link rel="stylesheet" href="css/menusub-1.0.min.css" type="text/css" media="all" />
-</noscript>
-
-<link rel="stylesheet" href="css/popup-1.1.min.css" type="text/css" media="print" onload="this.media='all';" onerror="this.loaderr='y';" />
-<noscript>
-  <link rel="stylesheet" href="css/popup-1.1.min.css" type="text/css" media="all" />
-</noscript>
-
-
-
-<link rel="stylesheet" href="css/zoom-2.0.min.css" type="text/css" media="print" onload="this.media='all';" onerror="this.loaderr='y';" />
-<noscript>
-  <link rel="stylesheet" href="css/zoom-2.0.min.css" type="text/css" media="all" />
-</noscript>
-
-<link rel="stylesheet" href="css/carousel-1.0.min.css" type="text/css" media="print" onload="this.media='all';" onerror="this.loaderr='y';" />
-<noscript>
-  <link rel="stylesheet" href="css/carousel-1.0.min.css" type="text/css" media="all" />
-</noscript>
 
 <!-- Consolidated jQuery initialization script - runs after jQuery is loaded with defer -->
 <script type="text/javascript">
@@ -1452,6 +1413,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   initPopupScrollFix();
 })();
 </script>
+
+<!-- Non-critical scripts loaded at end of body for better performance -->
+<script defer src="js/blocks-2.7.js?t=1651907903" onerror="this.loaderr='y';"></script>
+<script defer src="js/lazyload-1.3.min.js" onerror="this.loaderr='y';"></script>
+<script defer src="js/animation-1.0.min.js" onerror="this.loaderr='y';"></script>
+<script defer src="js/events-1.0.min.js" onerror="this.loaderr='y';"></script>
+<script defer src="js/menusub-1.0.min.js" onerror="this.loaderr='y';"></script>
+<script defer src="js/slds-1.4.min.js" onerror="this.loaderr='y';"></script>
+<script defer src="js/hammer.min.js" onerror="this.loaderr='y';"></script>
+<script defer src="js/zoom-2.0.min.js" onerror="this.loaderr='y';"></script>
+<script defer src="js/map-1.0.min.js" onerror="this.loaderr='y';"></script>
+
+<!-- Non-critical CSS loaded with media print trick -->
+<link rel="stylesheet" href="css/slds-1.4.min.css" media="print" onload="this.media='all';">
+<link rel="stylesheet" href="/css/animation-1.0.min.css" media="print" onload="this.media='all';">
+<link rel="stylesheet" href="css/menusub-1.0.min.css" media="print" onload="this.media='all';">
+<link rel="stylesheet" href="css/popup-1.1.min.css" media="print" onload="this.media='all';">
+<link rel="stylesheet" href="css/zoom-2.0.min.css" media="print" onload="this.media='all';">
+<link rel="stylesheet" href="css/carousel-1.0.min.css" media="print" onload="this.media='all';">
+<link rel="stylesheet" href="css/forms-1.0.min.css" media="print" onload="this.media='all';">
 
  </body>
 </html>

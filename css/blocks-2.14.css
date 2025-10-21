@@ -5,3 +5,14 @@
 .t228__rightcontainer .t-sociallinks__item {
     margin-top: 10px;
 }
+
+/* Fix mobile centering - override content-box with border-box */
+.t-container,
+.t-container_100,
+.t-container_10,
+.t-container_8,
+.t-section__container {
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+}
